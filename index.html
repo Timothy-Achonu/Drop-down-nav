@@ -6,43 +6,93 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 <body>
   <div class="container">
-    <figure class="top-image">
-      <img src="./images/image-hero-mobile.png" alt="">
-    </figure>
     <div class="nav-container">
       <!-- we want the nav and snap to be siblings -->
       <figure class="snap">
         <img src="./images/logo.svg" alt="">
       </figure>  
-      <nav>
-        Features
-        Company
-        Careers
-        About
-
-        Login
-        Register
+      <nav class="nav-bar grey-text">
+        <div class="not-login">
+          <div>
+            Features 
+            <figure>
+              <img src="./images/icon-arrow-down.svg" alt="">
+            </figure>
+          </div>  
+          <div>
+            Company
+            <figure>
+              <img src="./images/icon-arrow-down.svg" alt="">
+            </figure>
+          </div>   
+          <div>Careers</div>  
+          <div>About</div>
+        </div>
+        <div class="login-register">
+          <div>Login</div> 
+          <div class="register">Register</div>
+        </div>   
       </nav>
+      <div class="hamburger figure">
+        <img src="./images/icon-menu.svg" alt="">
+      </div>
     </div>
-  
-  
-
-    Make remote work
-
-    Get your team in sync, no matter your location. Streamline processes, 
-    create team rituals, and watch productivity soar.
-
-    Learn more
+    <figure class="top-image">
+      <img src="./images/image-hero-mobile.png" alt="" 
+      class="mobile">
+      <img src="./images/image-hero-desktop.png" alt="" 
+      class="desktop">
+    </figure>
     
-    <div class="attribution">
+    <!-- Middle text -->
+    <div class="mid-text-footer">
+      <div class="mid-text">
+        <div class="make-big">
+          <span>Make </span>  
+          <span>remote work</span>
+        </div>
+        <div class="grey-text paragraph">
+          Get your team in sync, no matter your location. 
+          Streamline processes, create team rituals, and watch 
+          productivity soar.   
+        </div>
+        <button class="learn-more">Learn more </button>
+      </div>
+
+      <footer class="bottom-images">
+          <figure class="footer-image figure">
+            <img src="./images/client-databiz.svg" alt="">
+          </figure>
+          <figure class="footer-image figure">
+            <img src="./images/client-audiophile.svg" alt="">
+          </figure>
+          <figure class="footer-image figure">
+            <img src="./images/client-meet.svg" alt="">
+          </figure>
+          <figure class="footer-image figure">
+            <img src="./images/client-maker.svg" alt="">
+          </figure>
+
+      </footer>
+    </div>
+    
+
+
+
+    
+
+    
+
+    
+    
+    
+  </div>
+  <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
-    </div>
   </div>
 </body>
 </html>
