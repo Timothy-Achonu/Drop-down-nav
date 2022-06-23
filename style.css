@@ -18,7 +18,9 @@
 /* general stylin */
 
 body {
+    position: relative;
     font-family: 'Epilogue', sans-serif;
+    overflow-x: hidden;
 }
 img {
     width: 100%;
@@ -37,6 +39,7 @@ img {
 
 /* nav container styling */
 .container > .nav-container {
+    /* position: relative; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,9 +63,66 @@ img {
 /* Nav-bar(add general stylings of nav-bar and
     it's children here, I mean styling that is relevant
     in both the desktop view and mobile) */
+
+
 .container > .nav-container > .nav-bar {
-    display: none;
+    position: absolute;
+    top: 0px;
+    right: -400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 53%;
+    background-color: white;
+    padding: 0 20px;
+    padding-top: 80px;
+    height: 100vh;
+    box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.4);
+    transition: opacity 200ms ease-in-out,
+    right 800ms ease-in-out;
 }
+.container > .nav-container > .nav-bar > div {
+    display: flex;
+}
+.container > .nav-container > .nav-bar > .not-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    height: 150px;
+    font-weight: 500;
+}
+.container > .nav-container > .nav-bar > 
+.not-login > div{
+    cursor: pointer;
+}
+.container > .nav-container > .nav-bar > 
+.login-register {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 4.5rem;
+    margin-top: 30px;
+}
+.container > .nav-container > .nav-bar > 
+.login-register > div {
+    cursor: pointer;
+}
+.container > .nav-container > .nav-bar > 
+.login-register > .register {
+    border: 2.7px solid grey;
+    padding: 10px 1px;
+    width: 85%;
+    text-align: center;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container > .nav-container > .nav-bar >
 div > div {
     display: flex;
@@ -81,14 +141,77 @@ div > div > figure > img {
     object-fit: contain;
     height: 70%;
 }
+.container > .nav-container > .nav-bar {
+    /* display: none; */
+    opacity: 0;
+}
 
-.container > .nav-container > .hamburger {
+/* Hamburger */
+
+.container > .nav-container > .hamburger{
+    position: absolute;
     width: 2.1rem;
     height: 1.2rem;
+    right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.container > .nav-container > 
+.open {
+    opacity: 1;
+    /* transition: opacity 200ms ease-in-out 200ms; */
+    z-index: 1;
+}
+.container > .nav-container >
+.close {
+    opacity: 0;
+    /* transition: opacity 200ms ease-in-out 200ms; */
+    z-index: 1;
+}
+.container > .nav-container >
+.flipper {
+    width: 2.1rem;
+    height: 1.2rem;
+    z-index: 5;
+    opacity: 0;
+    /* background-color: yellow; */
+}  
+/* overlay */
+.container > .nav-container >
+.overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.4);
+   opacity: 0;
+   transition: opacity 600ms ease-in-out 200ms;
+}
+
+/* When box is checked */
+.container > .nav-container > .flipper:checked + 
+.open.hamburger{
+   opacity: 0 ;
+}
+.container > .nav-container > .flipper:checked + 
+.open.hamburger + .close.hamburger{
+   opacity:1 ;
+}
+.container > .nav-container > .flipper:checked + 
+.open.hamburger + .close.hamburger + .overlay +
+.nav-bar {
+   opacity:1 ;
+   right: 0px;
+}
+.container > .nav-container > .flipper:checked + 
+.open.hamburger + .close.hamburger + .overlay {
+    opacity: 1;
+}
+
+
+
 
 /* Top image styling */
 .container > .top-image {
@@ -155,9 +278,10 @@ div > div > figure > img {
         display: grid;
         grid-template-columns: repeat(12,1fr);
         /* grid-template-rows: 130px minmax(500px,800px) ; */
-        grid-template-rows: 130px fit-content ;
+        grid-template-rows: 100px auto;
         margin-bottom: 50px;
         column-gap: 40px;
+        row-gap: 35px;
         padding: 0 40px;
     } 
 
@@ -168,11 +292,12 @@ div > div > figure > img {
     .container > .nav-container {
         grid-column: 1/-1;
         grid-row: 1/2;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         height: inherit;
-        padding: 0 0px;
+        padding: 0px 0px;
         padding-top: 20px;
         margin-bottom: 5px;
     }
@@ -182,17 +307,22 @@ div > div > figure > img {
 
     /* Nav-bar */
     .container > .nav-container > .nav-bar {
+        position: static;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         width: 90%;
-        height: 1.6rem;
+        padding-top: 0px;
+        height: 100%;
+        box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0);
     }
     .container > .nav-container > .nav-bar > div {
         display: flex;
     }
     .container > .nav-container > .nav-bar > .not-login {
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         width: 25%;
         font-weight: 500;
@@ -205,6 +335,7 @@ div > div > figure > img {
     .login-register {
         display: flex;
         justify-content: space-between;
+        flex-direction: row;
         align-items: center;
         width: 10rem;
     }
@@ -317,4 +448,8 @@ div > div > figure > img {
         width: 100%;
     }
 
+}
+* {
+    /* outline: 1px solid limegreen !important; */
+    /* background: rgb(0 100 0 / 0.1) !important; */
 }
