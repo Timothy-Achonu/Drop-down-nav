@@ -15,12 +15,14 @@
     --almost-black: hsl(0, 0%, 8%);
 }
 
-/* general stylin */
+/* general styling */
 
 body {
     position: relative;
     font-family: 'Epilogue', sans-serif;
     overflow-x: hidden;
+    /* background-color: yellow; */
+    min-height: 100vh;
 }
 img {
     width: 100%;
@@ -30,7 +32,6 @@ img {
 .grey-text {
     color: var(--medium-gray);
 }
-
 
 .container {
     width: 100%;
@@ -68,7 +69,8 @@ img {
 .container > .nav-container > .nav-bar {
     position: absolute;
     top: 0px;
-    right: -400px;
+    /* right: -400px; */
+    right: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -82,21 +84,118 @@ img {
     transition: opacity 200ms ease-in-out,
     right 800ms ease-in-out;
 }
+/* UNCOMMENT THIS */
+/* .container > .nav-container > .nav-bar {
+    display: none;
+    opacity: 0;
+} */
 .container > .nav-container > .nav-bar > div {
     display: flex;
 }
+/* Not login */
 .container > .nav-container > .nav-bar > .not-login {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 25%;
-    height: 150px;
+    width: 100%;
+    height: 500px;
+    /* height: fit-content; */
     font-weight: 500;
 }
 .container > .nav-container > .nav-bar > 
 .not-login > div{
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
+.container > .nav-container > .nav-bar >
+div > div {
+    display: flex;
+}
+.container > .nav-container > .nav-bar >
+div > div > figure {
+    position: absolute;
+    left: 80%;
+    width: 1rem;
+    height:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 0; */
+    /* background-color: red; */
+}
+.container > .nav-container > .nav-bar >
+div > div > figure > img {
+    object-fit: contain;
+    height: 100%;
+}
+/* FEATURES DROPDOWN */
+/* features dropdown figure & image styling */
+.container > .nav-container > .nav-bar >
+div > div > .features-dropdown {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 13px;
+    width: 100%;
+}
+.container > .nav-container > .nav-bar >
+div > div > .features-dropdown > div {
+    display: flex;
+    align-items: center;
+    /* background-color: yellow; */
+    width: 100%;
+    height: 30px;
+    margin-top: 12px;
+}
+.container > .nav-container > .nav-bar >
+div > div > .features-dropdown figure{
+    width: 1.4rem;
+    height: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.7rem;
+}
+.container > .nav-container > .nav-bar >
+.not-login > div > .features-dropdown figure >
+img {
+    object-fit: contain;
+    height: 100%;
+}
+
+.container > .nav-container > .nav-bar > 
+.not-login > div {
+    position: relative;
+    /* so that the checkbox can be
+    relative to this(thier parents) */
+
+    /* background-color: yellow; */
+    width: 89%;
+}
+.container > .nav-container > .nav-bar > 
+.not-login > div > .toggler {
+    position: absolute;
+    left: 80%;
+    width: 1rem;
+    height: 100%;
+    opacity: 0;
+    z-index: 4;
+    background-color: yellow;
+}
+/* When checkbox is checked */
+.container > .nav-container > .nav-bar > 
+.not-login > div > .toggler1:checked + figure {
+    transform: rotate(180deg);
+}
+.container > .nav-container > .nav-bar > 
+.not-login > div > .toggler2:checked + figure {
+    transform: rotate(180deg);
+}
+
+
+
 .container > .nav-container > .nav-bar > 
 .login-register {
     display: flex;
@@ -123,28 +222,8 @@ img {
     align-items: center;
 }
 
-.container > .nav-container > .nav-bar >
-div > div {
-    display: flex;
-}
-.container > .nav-container > .nav-bar >
-div > div > figure {
-    width: 0.7rem;
-    height: 1.1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0.3rem;
-}
-.container > .nav-container > .nav-bar >
-div > div > figure > img {
-    object-fit: contain;
-    height: 70%;
-}
-.container > .nav-container > .nav-bar {
-    /* display: none; */
-    opacity: 0;
-}
+
+
 
 /* Hamburger */
 
@@ -204,10 +283,12 @@ div > div > figure > img {
 .nav-bar {
    opacity:1 ;
    right: 0px;
+   display: flex;
 }
 .container > .nav-container > .flipper:checked + 
 .open.hamburger + .close.hamburger + .overlay {
     opacity: 1;
+   
 }
 
 
@@ -460,7 +541,7 @@ div > div > figure > img {
 
 /* * {
     outline: 1px solid limegreen !important;
-} */
+}  */
 
 /* * {
     background: rgb(0 100 0 / 0.1) !important;
