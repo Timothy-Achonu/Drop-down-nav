@@ -316,6 +316,7 @@ div > div > figure > img {
         padding-top: 0px;
         height: 100%;
         box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0);
+        opacity: 1;
     }
     .container > .nav-container > .nav-bar > div {
         display: flex;
@@ -325,7 +326,9 @@ div > div > figure > img {
         flex-direction: row;
         justify-content: space-between;
         width: 25%;
+        height: fit-content;
         font-weight: 500;
+        padding: 8px 0;
     }
     .container > .nav-container > .nav-bar > 
     .not-login > div{
@@ -338,6 +341,9 @@ div > div > figure > img {
         flex-direction: row;
         align-items: center;
         width: 10rem;
+        margin-top: 0;
+        height: fit-content;
+        /* background-color: yellow; */
     }
     .container > .nav-container > .nav-bar > 
     .login-register > div {
@@ -348,6 +354,7 @@ div > div > figure > img {
         border:2.6px solid ;
         padding: 8px 10px;
         border-radius: 11px;
+        width: fit-content;
     }
 
     /* Top Image */
@@ -449,7 +456,13 @@ div > div > figure > img {
     }
 
 }
-* {
-    /* outline: 1px solid limegreen !important; */
-    /* background: rgb(0 100 0 / 0.1) !important; */
-}
+
+
+/* * {
+    outline: 1px solid limegreen !important;
+} */
+
+/* * {
+    background: rgb(0 100 0 / 0.1) !important;
+
+} */
